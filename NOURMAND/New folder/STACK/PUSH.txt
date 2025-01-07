@@ -1,0 +1,40 @@
+int push(int* arr, int capacity, int top, int value)
+{
+    if (top == capacity - 1)
+    {
+        cout << "The Stack is Full..." << endl;
+    }
+    else
+    {
+        arr[++top] = value;
+        cout << value << " pushed successfully" << endl;
+    }
+
+    return top;
+}
+
+======================================== MAIN ========================================
+
+
+int main()
+{
+    int* arr;
+    int capacity, top = -1;
+
+    cout << "Enter capacity: ";
+    cin >> capacity;
+
+    arr = new int[capacity];
+
+    printStack(arr, top);
+
+    top = push(arr, capacity, top, 10);
+    top = push(arr, capacity, top, 20);
+    top = push(arr, capacity, top, 30);
+    printStack(arr, top);
+    top = pop(arr, top);
+    printStack(arr, top);
+
+
+    return 0;
+}

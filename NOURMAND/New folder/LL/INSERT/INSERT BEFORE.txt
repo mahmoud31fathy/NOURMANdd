@@ -1,0 +1,46 @@
+struct Node {
+    int data;
+    Node* next;
+};
+
+
+
+Node* insertBefore(Node* start, int n_val, int s_val) {
+
+    if (start == nullptr) {
+        cout << "The list is empty. Cannot insert before." << endl;
+        return start;
+    }
+
+
+    if (start->data == s_val) {
+        Node* new_node = new Node();
+        new_node->data = n_val;
+        new_node->next = start;
+        start = new_node;
+        return start;
+    }
+
+
+    Node* temp = start;
+    Node* prev = nullptr;
+
+    while (temp != nullptr && temp->data != s_val) {
+        prev = temp;
+        temp = temp->next;
+    }
+
+    if (temp == nullptr) {
+        cout << "Node " << s_val << " not found in the list." << endl;
+    }
+    else {
+ 
+        Node* new_node = new Node();
+        new_node->data = n_val;
+        new_node->next = temp;
+        prev->next = new_node;
+        cout << "Node " << n_val << " inserted before node " << s_val << " successfully." << endl;
+    }
+
+    return start;
+}

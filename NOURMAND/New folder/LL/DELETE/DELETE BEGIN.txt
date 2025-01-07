@@ -1,0 +1,19 @@
+struct Node {
+    int data;
+    Node* next;
+};
+
+
+
+Node* deleteBegin(Node* start) {
+    if (start == nullptr) {
+        cout << "List is already empty" << endl;
+        return nullptr;
+    }
+
+    Node* temp = start;
+    start = start->next;
+    delete temp;
+    cout << "Node deleted" << endl;
+    return start;
+}

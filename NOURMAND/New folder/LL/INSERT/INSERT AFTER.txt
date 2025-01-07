@@ -1,0 +1,26 @@
+struct Node {
+    int data;
+    Node* next;
+};
+
+
+
+Node* insertAfter(Node* start, int value, int searchValue) {
+    Node* temp = start;
+    while (temp != nullptr && temp->data != searchValue) {
+        temp = temp->next;
+    }
+
+    if (temp == nullptr) {
+        cout << "Node " << searchValue << " not found" << endl;
+    }
+    else {
+        Node* newNode = new Node();
+        newNode->data = value;
+        newNode->next = temp->next;
+        temp->next = newNode;
+        cout << "Node " << value << " inserted after node " << searchValue << " successfully" << endl;
+    }
+
+    return start;
+}

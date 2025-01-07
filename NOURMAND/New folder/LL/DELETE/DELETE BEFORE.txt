@@ -1,0 +1,39 @@
+struct Node {
+    int data;
+    Node* next;
+};
+
+
+
+Node* deleteBefore(Node* start, int value) {
+    if (start == nullptr || start->next == nullptr || start->data == value) {
+        cout << "Cannot delete before node " << value << " as it does not exist or is the first node." << endl;
+        return start;
+    }
+
+    Node* temp = start;
+    Node* prev = nullptr;
+    Node* beforePrev = nullptr;
+
+    while (temp != nullptr && temp->data != value) {
+        beforePrev = prev;
+        prev = temp;
+        temp = temp->next;
+    }
+
+    if (temp == nullptr) {
+        cout << "Node " << value << " not found in the list." << endl;
+    }
+    else if (beforePrev == nullptr) {
+        start = start->next;
+        delete prev;
+        cout << "Node deleted before " << value << " successfully." << endl;
+    }
+    else {
+        beforePrev->next = temp;
+        delete prev;
+        cout << "Node deleted before " << value << " successfully." << endl;
+    }
+
+    return start;
+}

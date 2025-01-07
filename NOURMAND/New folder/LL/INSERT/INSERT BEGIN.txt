@@ -1,0 +1,12 @@
+struct Node {
+    int data;
+    Node* next;
+};
+
+
+Node* insertBegin(Node* start, int value) {
+    Node* newNode = new Node();
+    newNode->data = value;
+    newNode->next = start;
+    return newNode;
+}

@@ -1,0 +1,21 @@
+struct Node {
+    int data;
+    Node* next;
+};
+
+
+
+void display(Node* start) {
+    Node* ptr = start;
+
+    if (ptr == nullptr) {
+        cout << "The list is empty";
+    }
+    else {
+        while (ptr != nullptr) {
+            cout << ptr->data << " ";
+            ptr = ptr->next;
+        }
+    }
+    cout << endl;
+}

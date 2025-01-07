@@ -1,0 +1,30 @@
+struct Node {
+    int data;
+    Node* next;
+};
+
+Node* createList(Node* start) {
+    Node* newNode, * ptr;
+    int num;
+    cout << "Enter the data: ";
+    cin >> num;
+    while (num != -1) {
+        newNode = new Node();
+        newNode->data = num;
+        newNode->next = nullptr;
+
+        if (start == nullptr) {
+            start = newNode;
+        }
+        else {
+            ptr = start;
+            while (ptr->next != nullptr)
+                ptr = ptr->next;
+            ptr->next = newNode;
+        }
+        cout << "Enter the data: ";
+        cin >> num;
+    }
+    return start;
+}
+

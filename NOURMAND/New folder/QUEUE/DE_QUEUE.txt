@@ -1,0 +1,43 @@
+const int SIZE = 5;  
+int arr[SIZE];
+int front = -1, rear = -1;
+
+
+
+void dequeue()
+{
+    if (front == -1 || front > rear)
+    {
+        cout << "The queue is Empty !" << endl;
+        return;
+    }
+
+    cout << "dequeued : " << arr[front] << endl;
+    front++;
+
+}
+
+
+
+
+======================================== MAIN ========================================
+
+
+
+int main()
+{
+
+    display(); 
+    enqueue(10);
+    enqueue(20);
+    enqueue(30);
+    enqueue(40);
+    enqueue(50);
+    display();      
+    enqueue(20);  
+    dequeue();  
+    dequeue(); 
+    display();      
+
+    return 0;
+}

@@ -1,0 +1,25 @@
+struct Node {
+    int data;
+    Node* next;
+};
+
+
+
+Node* deleteAfter(Node* start, int value) {
+    Node* temp = start;
+    while (temp != nullptr && temp->data != value) {
+        temp = temp->next;
+    }
+
+    if (temp == nullptr || temp->next == nullptr) {
+        cout << "Cannot delete after node " << value << " as it does not exist or has no next node." << endl;
+    }
+    else {
+        Node* toDelete = temp->next;
+        temp->next = toDelete->next;
+        delete toDelete;
+        cout << "Node deleted after " << value << " successfully." << endl;
+    }
+
+    return start;
+}

@@ -1,0 +1,32 @@
+struct User
+{
+    int id;
+    string name;
+    int age;
+    string phone_number;
+
+    User()
+    {
+        id = 0;
+        name = "Test";
+        age = 18;
+        phone_number = "015";
+    }
+
+    void print()
+    {
+        cout << id << " " << name << " " << age << " " << phone_number << endl;
+    }
+};
+
+int main()
+{
+
+    User* user_1 = new User();
+
+    user_1->id = 7;
+    user_1->print();
+
+
+    return 0;
+}

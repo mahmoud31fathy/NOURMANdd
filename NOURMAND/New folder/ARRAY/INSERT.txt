@@ -1,0 +1,14 @@
+const int MAX_SIZE = 100; 
+
+
+int insert(int arr[], int size, int value)
+{
+    if (size >= MAX_SIZE)
+    {
+        cout << "Array is full. Cannot insert more elements.\n";
+        return size; 
+    }
+    arr[size] = value; 
+    cout << "Inserted " << value << " into the array.\n";
+    return size + 1; 
+}
